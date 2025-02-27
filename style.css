@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-    background: url(./figma/RealorDupe.png);
+    background: url(figma/RealorDupe.png);
     color: transparent;
     width: fit-content;
     place-self: center;
@@ -24,7 +24,7 @@ h1 {
 }
 
 p{
-    background: url(./figma/clickon.png);
+    background: url(figma/clickon.png);
     color: transparent;
     width: fit-content;
     place-self: center;
@@ -133,7 +133,7 @@ p{
 }
 
 h2{
-    background: url(./figma/DupeCulture.png);
+    background: url(figma/DupeCulture.png);
     color: transparent;
     width: fit-content;
     place-self: center;
@@ -143,7 +143,7 @@ h2{
 }
 
 h3{
-    background: url(./figma/cheap.png);
+    background: url(figma/cheap.png);
     color: transparent;
     width: fit-content;
     place-self: center;
