@@ -118,7 +118,7 @@ p{
     display: none;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #EA6435;
+    background-color: #000000;
     color: white;
     border: none;
     cursor: pointer;
@@ -126,8 +126,10 @@ p{
 }
 
 #next-btn:hover {
-    background-color: #F7CBC9;
-    color:#EA6435;
+    background-color: #ffffff;
+    color:#000000;
+    outline:1px solid #000000;
+
 }
 
 h2{
@@ -173,31 +175,4 @@ h3{
     right: 20px;
     font-size: 24px;
     cursor: pointer;
-}
-
-#playAgainBtn {
-    width: 70px;
-    height: 30px;
-    background: url(../figma/Play\ Again.png);
-    background-size: 60px;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color:#EA6435;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-#playAgainBtn:hover {
-    width: 70px;
-    height: 30px;
-    background: url(../figma/Play-Again-Hover.png);
-    background-size:60px;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50px;
-    background-color: #F7CBC9;
-    outline: 1px solid #EA6435;
 }
