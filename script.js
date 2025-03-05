@@ -48,7 +48,7 @@ function makeGuess(choice) {
     let product = products[currentRound];
     let correctChoice = image1Type === "real" ? 1 : 2;
 
-    let feedback = choice === correctChoice ? "✅ Correct!" : "❌ Wrong!";
+    let feedback = choice === correctChoice ? "✔️ Correct!" : "X Wrong!";
     feedback += `\nReal: ${product.realPrice} | Dupe: ${product.dupePrice}`;
 
     document.getElementById("feedback").innerText = feedback;
@@ -61,3 +61,13 @@ function makeGuess(choice) {
 function showPopup() {
     document.getElementById("winPopup").style.display = "flex";
 }
+
+// Function to close the popup
+document.addEventListener("DOMContentLoaded", () => {
+    const closeButton = document.querySelector(".close-btn");
+    if (closeButton) {
+        closeButton.addEventListener("click", () => {
+            document.getElementById("winPopup").style.display = "none";
+        });
+    }
+});
