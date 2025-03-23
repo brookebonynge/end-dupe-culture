@@ -24,7 +24,7 @@ h1 {
     
 }
 
-p{
+h4{
     background: url(./figma/clickon1.png);
     color: transparent;
     width: fit-content;
@@ -69,6 +69,7 @@ p{
 
 .images-real1{
     background:url(../figma/real1.jpg);
+
 }
 
 .images-real2{
