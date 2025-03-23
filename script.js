@@ -17,16 +17,16 @@ const products = [
 let currentRound = 0;
 
 function loadNextRound() {
-    // Fix: Properly check if all rounds are done
+    // Stop if all rounds are done
     if (currentRound >= products.length) {
-        showPopup(); // Show the popup when game is over
+        showPopup(); // Game over popup
         return;
     }
 
     let product = products[currentRound];
     let randomOrder = Math.random() < 0.5;
 
-    // Assign images randomly
+    // Assign real/dupe images randomly
     let realImage = randomOrder ? product.real : product.dupe;
     let dupeImage = randomOrder ? product.dupe : product.real;
 
@@ -36,9 +36,16 @@ function loadNextRound() {
     document.getElementById("image1").dataset.type = randomOrder ? "real" : "dupe";
     document.getElementById("image2").dataset.type = randomOrder ? "dupe" : "real";
 
-    // Reset feedback & hide next button
+    // 🔁 Reset all visual elements for the round
     document.getElementById("feedback").innerText = "";
+    document.getElementById("slider-section").style.display = "none";
+    document.getElementById("actual-dupe-price").style.display = "none";
+    document.getElementById("slider-value").innerText = "0";
+    document.getElementById("price-slider").value = 0;
     document.getElementById("next-btn").style.display = "none";
+
+    document.getElementById("label1").innerText = "";
+    document.getElementById("label2").innerText = "";
 }
 
 function makeGuess(choice) {
@@ -47,15 +54,42 @@ function makeGuess(choice) {
 
     let product = products[currentRound];
     let correctChoice = image1Type === "real" ? 1 : 2;
+    let chosenType = choice === 1 ? image1Type : image2Type;
 
-    let feedback = choice === correctChoice ? "✔️ Correct!" : "X Wrong!";
-    feedback += `\nReal: ${product.realPrice} | Dupe: ${product.dupePrice}`;
+    // Show only the real price
+    document.getElementById("feedback").innerText = `The real price is: ${product.realPrice}`;
 
-    document.getElementById("feedback").innerText = feedback;
+    // Prepare slider
+    document.getElementById("slider-section").style.display = "block";
+    document.getElementById("actual-dupe-price").style.display = "none";
+    document.getElementById("slider-value").innerText = "0";
+    let slider = document.getElementById("price-slider");
+    slider.value = 0;
+
+    slider.oninput = function () {
+        document.getElementById("slider-value").innerText = this.value;
+    };
+
+    slider.onchange = function () {
+        document.getElementById("actual-dupe-price").innerText = `The actual dupe price is: ${product.dupePrice}`;
+        document.getElementById("actual-dupe-price").style.display = "block";
+        document.getElementById("next-btn").style.display = "block";
+        // Show dupe price
+    document.getElementById("actual-dupe-price").innerText = `The actual dupe price is: ${product.dupePrice}`;
+    document.getElementById("actual-dupe-price").style.display = "block";
+
+    // Reveal labels
+    document.getElementById("label1").innerText = image1Type === "real" ? "REAL" : "DUPE";
+    document.getElementById("label2").innerText = image2Type === "real" ? "REAL" : "DUPE";
+
+    // Show next
     document.getElementById("next-btn").style.display = "block";
 
-    currentRound++; //Move this AFTER feedback to ensure all rounds play
+    };
+
+    currentRound++;
 }
+
 
 //Function to show the popup when the game ends
 function showPopup() {

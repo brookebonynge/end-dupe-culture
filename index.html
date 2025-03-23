@@ -15,7 +15,24 @@
         <div class="image-container">
             <img id="image1" class="product" onclick="makeGuess(1)">
             <img id="image2" class="product" onclick="makeGuess(2)">
+            <div class="image-container">
+                <div>
+                    <img id="image1" class="product" onclick="makeGuess(1)">
+                    <p4 id="label1" class="label"></p4>
+                </div>
+                <div>
+                    <img id="image2" class="product" onclick="makeGuess(2)">
+                    <p5 id="label2" class="label"></p5>
+                </div>
+            </div>
         </div>
+
+        <div id="slider-section" style="display:none;">
+            <p1>What do you think the dupe price is?</p1>
+            <input type="range" id="price-slider" min="0" max="2000" step="1">
+            <p2>Your guess: $<span id="slider-value">0</span></p2>
+            <p3 id="actual-dupe-price" style="display:none;"></p3>
+        </div>        
 
         <div id="feedback"></div>
         <button id="next-btn" onclick="loadNextRound()">Next Round</button>
