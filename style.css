@@ -199,3 +199,51 @@ h3{
     margin-top: 5px;
     color: #422717;
 }
+
+#price-slider {
+    appearance: none;
+    width: 80%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+#price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #422717;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+#price-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #422717;
+    cursor: pointer;
+}
+
+.price-visual {
+    margin-top: 20px;
+    text-align: left;
+    padding: 10px;
+}
+
+.bar {
+    height: 20px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    position: relative;
+    background-color: #F2E7FF;
+}
+
+.bar-label {
+    position: absolute;
+    top: -22px;
+    left: 0;
+    font-size: 14px;
+    color: #422717;
+}

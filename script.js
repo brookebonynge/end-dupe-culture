@@ -36,7 +36,7 @@ function loadNextRound() {
     document.getElementById("image1").dataset.type = randomOrder ? "real" : "dupe";
     document.getElementById("image2").dataset.type = randomOrder ? "dupe" : "real";
 
-    // 🔁 Reset all visual elements for the round
+    // Reset all visual elements for the round
     document.getElementById("feedback").innerText = "";
     document.getElementById("slider-section").style.display = "none";
     document.getElementById("actual-dupe-price").style.display = "none";
